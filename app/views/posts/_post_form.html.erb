@@ -1,3 +1,10 @@
-<%= form_with() %>
-
+<%= form_with model: @post, local: true do |f| %>
+    <div>
+        <%= f.text_field :title, placeholder: "Title" %>
+    </div>
+    <div>
+        <%= f.text_field :description, placeholder: "Description" %>
+    </div>
+    
+    <%= f.submit "#{action} Post" %>
 <% end %>
