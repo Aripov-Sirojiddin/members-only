@@ -4,5 +4,6 @@
     <p><small>Created <%= time_ago_in_words(post.created_at) %> ago by <%= post.user.email %></small></p>
     <% if current_user == post.user %>
         <%= link_to "Edit post", edit_post_path(post) %>
+        <%= button_to "Delete Post", post_path(post), method: :delete %>
     <% end %>
 </div>
