@@ -1,4 +1,10 @@
-<%= button_to "Sign Out", destroy_user_session_path, :method => :delete %>
+<% if user_signed_in? %>
+    <%= button_to "Sign Out", destroy_user_session_path, :method => :delete %>
+<% else %>
+    <%= button_to "Sign In", new_user_session_path, :method => :get %>
+<% end %>
+
+
 <%= link_to "Create Post", new_post_path %>
 <div class="posts">
     <% @posts.each do |post| %>
